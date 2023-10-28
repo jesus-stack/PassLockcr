@@ -8,10 +8,12 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -31,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class Signin : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +65,7 @@ fun SingIn() {
             text = stringResource(R.string.sign_in),
             modifier = Modifier
                 .padding(bottom = 16.dp)
-                .align(alignment = Alignment.Start)
+                .align(alignment = Alignment.CenterHorizontally)
         )
         EditNumberField(
             label = R.string.usuario,
@@ -83,17 +86,26 @@ fun SingIn() {
             onValueChange = { contrasena = it },
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Ascii,
-                imeAction = ImeAction.Next
+                imeAction = ImeAction.Done
             ),
             modifier = Modifier
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
         )
+        Row (Modifier.weight(1f)){
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "ACEPTAR", fontSize = 24.sp)
+            }
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "CANCELAR", fontSize = 24.sp)
+            }
+        }
+
 }
 }
 
 
-    @OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun EditNumberField(modifier: Modifier = Modifier, @StringRes label: Int,
                         @DrawableRes leadingIcon: Int,
