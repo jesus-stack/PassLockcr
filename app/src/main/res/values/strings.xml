@@ -2,4 +2,7 @@
     <string name="app_name">PassLockcr</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_signin">Signin</string>
+    <string name="sign_in">Sign In</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
 </resources>
